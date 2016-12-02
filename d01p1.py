@@ -12,9 +12,9 @@ for t in range(len(sys.argv[1:])):
   heading = list(sys.argv[t+1])
   distance = float((''.join(heading[1:])).strip(','))
   if heading[0] == 'R':
-      facing = compass[((compass.index(facing)+4)%3)]
+      facing = compass[((compass.index(facing)+5)%4)]
   elif heading[0] == 'L':
-      facing = compass[((compass.index(facing)-2)%3)]
+      facing = compass[((compass.index(facing)+3)%4)]
   if facing == 'N': y += distance
   elif facing == 'E': x += distance
   elif facing == 'S': y -= distance

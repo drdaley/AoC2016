@@ -8,7 +8,7 @@ y = 0
 facing = 'N'
 compass = list['NESW']
 
-for t in range(argv[1:])
+for t in range(sys.argv[1:])
   heading = list(sys.argv[t])
     if heading[0] = 'R'
     facing = compass[(compass.index(facing)+1)]

@@ -20,4 +20,4 @@ for t in range(len(sys.argv[1:])):
   elif facing == 'S': y -= distance
   elif facing == 'W': x -= distance
 
-print(abs(x)+abs(y))
+print(int(abs(x)+abs(y)))

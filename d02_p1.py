@@ -3,7 +3,7 @@
 keypad= [[1,2,3],[4,5,6],[7,8,9,]]
 #start at keypad[1][1]
 direction = ['U','D','L','R']
-move = [(1,0),(-1,0),(0,-1),(0,1)]
+move = [(-1,0),(1,0),(0,-1),(0,1)]
 code= list()
 
 def digit():
@@ -23,5 +23,5 @@ for i in range(len(instructions)):
   instruction=instructions[i]
   digit()
 
-print(str(code[0:]))
+for i in range(len(code)) : print(str(code[i]), end='')
 

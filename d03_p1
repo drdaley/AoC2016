@@ -1,0 +1,18 @@
+# Squares With Three Sides
+
+c = 0
+triangles = list()
+triangle  = list()
+
+input = open('input.txt') 
+data = input.read()
+triangles = data.strip('\n').split('\n')
+
+for i in range(len(triangles)):
+  triangle = triangles[i]
+  triangle.split(' ')
+  triangle.sort()
+  if sum(triangle[0,1]) > triangle[2]:
+    c = c + 1
+  
+print(str(c))

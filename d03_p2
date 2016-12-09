@@ -1,0 +1,28 @@
+# Squares With Three Sides
+
+c = 0
+raw = list()
+intermediate = list()
+triangles = list()
+triangle1  = list()
+triangle2  = list()
+triangle3  = list()
+
+input = open('input.txt') 
+data = input.read()
+raw = data.strip('\n').split('\n ')
+for i in range(len(raw)):
+  intermediate = raw[i]
+  intermediate = intermediate.split(' ')
+  while '' in intermediate: intermediate.remove('')
+  for j in range(len(intermediate)): triangles.append(intermediate[j])
+triangles = list(map(int, triangles))
+d = len(triangles)
+print(d)
+#for i in range(int(d)): 
+#  triangle1 = [triangles[i],triangles[3+i],triangles[6+i]]
+#  triangle.sort()
+#  if sum(triangle[:2]) > triangle[2]:
+#    c = c + 1
+#  print(triangle)
+#print(c)

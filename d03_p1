@@ -1,4 +1,5 @@
 # Squares With Three Sides
+import re
 
 c = 0
 triangles = list()
@@ -10,9 +11,12 @@ triangles = data.strip('\n').split('\n')
 
 for i in range(len(triangles)):
   triangle = triangles[i]
-  triangle.split(' ')
+  triangle = triangle.strip(' ')
+  triangle = triangle.split(' ')
+  while '' in triangle: triangle.remove('')
+  triangle= list(map(int, triangle))
   triangle.sort()
-  if sum(triangle[0,1]) > triangle[2]:
+  if sum(triangle[:2]) > triangle[2]:
     c = c + 1
   
-print(str(c))
+print(c)

@@ -13,7 +13,10 @@ data = input.read()
 #strip lines, split into lines
 raw = data.strip('\n').split('\n ')
 for i in range(len(raw)):
-  
+  triangles.extend(raw[::3])
+  triangles.extend(raw[0::3])
+  triangles.extend(raw[1::3])
+print(triangles)
   
   
 #write every third value to triangles, starting at 0, then 1 then 2

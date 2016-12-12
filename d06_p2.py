@@ -16,7 +16,5 @@ with open('input.txt') as data:
     b = a.most_common()
     fcode.append(b[0][0])  
     rcode.append(b[len(b)-1][0])
-  print('Part 1: ' ''.join(fcode) \n 'Part 2: ' ''.join(rcode))
- 
-  
-  
+  print(''.join(fcode))
+  print(''.join(rcode))

@@ -20,8 +20,7 @@ def rrow(l, i, s):
   temp = deque(s[l])
   temp.rotate(i)
   s[l] = list(temp)
-  #print(s[l])
-  #print(temp2)
+
 def rcolumn(l, i, s):
   temp = list(range(6))
   for c in range(6):
@@ -33,14 +32,7 @@ def rcolumn(l, i, s):
   temp = list(temp2)
   for c in range(6):
     s[c][l] = temp[c]
-  #print(s[c][l])
-  #temp = range(6)
-  #d = iter(list(range(6)))
-  #for c in range(6):
-  #  temp[(next(d)+i-1)%6] = screen[c][l]
-  #print(temp)
-  #for c in range(6):
-  #  screen[c][l] = temp[c]
+
     
 with open('..\input\input.txt') as data:
   screen = list([['.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.'],
@@ -49,7 +41,7 @@ with open('..\input\input.txt') as data:
                ['.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.'],
                ['.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.'],
                ['.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.','.']])
-  #print(display(screen))    
+    
 
   for line in data:
     if line.startswith('rect'):  
@@ -57,25 +49,19 @@ with open('..\input\input.txt') as data:
       
       w = int(line[a-1])
       if line[a-2].isnumeric: w = int(line[a-2:a])
-      #print(w)      
+      
       h = int(line[a+1])
-      #print(h)
+
       rect(h,w,screen)      
     elif line.startswith('rotate row'):
       l = int(line[int(line.find('='))+1])
       if line[line.find('=')+2].isnumeric(): l = int(line[int(line.find('='))+1:int(line.find('='))+3])
-      #print(l)
       i = int(line[int(line.find('b'))+3:])
-      #if line[line.find('b')+4].isnumeric(): i = int(line[int(line.find('b'))+3:])
-      #print(i)
       rrow(l, i, screen)
     elif line.startswith('rotate column'):
       l = int(line[int(line.find('='))+1])
       if line[line.find('=')+2].isnumeric(): l = int(line[int(line.find('='))+1:int(line.find('='))+3])
-      #print(l)
       i = int(line[int(line.find('b'))+3:])
-      #if line[line.find('b')+4].isnumeric(): i = int(line[int(line.find('b'))+3:])
-      #print(i)
       rcolumn(l,i,screen)
   counter = 0
   for l in screen: 

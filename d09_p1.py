@@ -1,7 +1,4 @@
-#import re
-
-#criterion = re.compile((*?x*?) )
-def parse(d,b,e,m,l,n,t,c,x):
+def parse(d, x):
   b = d.find('(') # beginning
   e = int(d.find(')')) # end
   m = d.find('x'[b:e]) # middle
@@ -24,13 +21,13 @@ with open('..\input\input.txt') as data:
   c = tuple()
   decrypt = list()
   while '(' in data:
-    if parse(data,b,e,m,l,n,t,c,3) != '':
-      decrypt[len(decrypt):] = parse(data,b,e,m,l,n,t,c,3)
-    n= parse(data,b,e,m,l,n,t,c,1)
-    t = str(parse(data,b,e,m,l,n,t,c,0)*n)
+    if parse(data,3) != '':
+      decrypt[len(decrypt):] = parse(data,3)
+    n= parse(data,1)
+    t = str(parse(data,0)*n)
     if t != '':
       decrypt[len(decrypt):] = t
-    data = parse(data,b,e,m,l,n,t,c,2)
+    data = parse(data,2)
     print(len(data))
   if '(' not in data and data != '':
     decrypt[len(decrypt):] = data

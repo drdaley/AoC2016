@@ -5,9 +5,10 @@ def gets(l, i):
   b = l[int(l.find('b')):]
   if b in i.keys():
     s = i.pop(b)
-    i[b] = list([int(s), int(v)]).sort()
+    print(s)
+    i[b] = list([s, v]).sort()
   if b not in i.keys():
-    i[b] = str(v)
+    i[b] = int(v)
   #print(inv)
   #print('linebreak')
 
@@ -19,33 +20,48 @@ def gives(l, i):
   #print(bh)
   if bg in i.keys():
     g = i.pop(bg)     
-    if type(g) == list:
-      if int(17) and int(61) in g: print(bg)
-      if int(17) or int(61) in g: print(bg)
+    if type(g) == 'list':
+      #if int(17) and int(61) in g: print(bg)
+      #if int(17) or int(61) in g: print(bg)
       if bl in i.keys(): 
-        l = i.pop(bl)
-        print(l)
-        print(list([int(l), int(g[0])]).sort())
-        i[bl] = list([int(l), int(g[0])]).sort()
+        o = i.pop(bl)
+        #print(o)
+        #print(list([int(l), int(g[0])]).sort())
+        i[bl] = list([int(o), int(g[0])]).sort()
       else: i[bl] = list([int(g[0]), int(g[0])])
       if bh in i.keys():
         h = i.pop(bh)
         i[bh] = list([int(l), int(g[1])]).sort()
       else: i[bh] = list([g[1], g[1]])
     elif type(g) == int:
+      g = int(g)
       g = list([g])*2
       if bl in i.keys(): 
-        l = i.pop(bl)
-        i[bl] = list([int(l), int(g[0])]).sort()
-      else: i[bl] = list([g[0], g[0]])
+        o = i.pop(bl)
+        i[bl] = list([int(o), int(g[0])]).sort()
+      else: i[bl] = g[0]
       if bh in i.keys():
         h = i.pop(bh)
-        i[bh] = list([int(l), int(g[1])]).sort()
-      else: i[bh] = list([g[1], g[1]])
-    else: print('ERROR')
+        i[bh] = list([int(h), int(g[1])]).sort()
+      else: i[bh] = g[1]
+    else: 
+      print(g) 
+      print(type(g))
   elif bg not in i.keys():
-    
-  else: print('ERROR')  
+    g = [0,0]
+    if bl in i.keys(): 
+        o = i.pop(bl)
+        print(o)
+        print(g[0])
+        i[bl] = [o, g[0]].sort()
+    else: i[bl] = g[0]
+    if bh in i.keys():
+        h = i.pop(bh)
+        i[bh] = [int(h), int(g[1])].sort()
+    else: i[bh] = g[1]
+  else: 
+    #print(bg)
+    print('ERROR')  
        
          
    #else:

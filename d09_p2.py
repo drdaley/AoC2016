@@ -1,3 +1,4 @@
+import numpy as np
 
 #def parse(d,b,e,m,l,n,t,c,x):
 #  b = d.find('(') # beginning
@@ -32,7 +33,8 @@ def seqisolate(d): #looks to find an entire chunk where decompression flags will
     
 
 def decompress(s):
-  
+  act = np.ones((s.count('('), 3),dtype=np.int16)
+  print(act)
 
 
 with open('..\input\input.txt') as data:
@@ -42,5 +44,6 @@ with open('..\input\input.txt') as data:
   while '(' in data:
     s = str()
     s = seqisolate(data) 
+    decompress(s)
     
   

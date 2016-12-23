@@ -34,7 +34,13 @@ def seqisolate(d): #looks to find an entire chunk where decompression flags will
 
 def decompress(s):
   act = np.ones((s.count('('), 3),dtype=np.int16)
-  print(act)
+  #print(act)
+  b = int(s.find('(')) # beginning
+  e = int(s.find(')')) # end 
+  m = int(s.find('x'[b:e])) # middle
+  for row in act:
+    
+    row[0] = 
 
 
 with open('..\input\input.txt') as data:

@@ -30,10 +30,10 @@ def cscheck(cs): # returns false unless len(cs) is odd
   elif len(cs)%2 == 0: return False
   else: print('cscheck error')
 #testinput = '10000'
-input = '10111100110001111'
-#testhdlen = 20
-hdlen = 35651584
-a = input
+code  = input('What is the seed code? ')
+hdlen = int(input('What is the length of the hard drive to be filled? '))
+
+a = code
 while not lencheck(a, hdlen):
   a = elongate(a)
 a = a[:hdlen]

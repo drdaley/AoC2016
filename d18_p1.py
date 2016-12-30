@@ -2,6 +2,7 @@ from pprint import pprint
 finput = '.^^^.^.^^^.^.......^^.^^^^.^^^^..^^^^^.^.^^^..^^.^.^^..^.^..^^...^.^^.^^^...^^.^.^^^..^^^^.....^....'
 rows = list()
 rows.append(finput)
+total_rows = int(input('How many rows to generate? '))
 def flooring(r):
   p = '.'+r[(len(r)-1)]+'.'
   next = list()
@@ -15,6 +16,6 @@ def flooring(r):
   r.append(''.join(next))
 def rowcount(r):
   return r.count('.') 
-while len(rows) < 40:
+while len(rows) < total_rows:
   flooring(rows)
 print(sum(map(rowcount, rows)))
